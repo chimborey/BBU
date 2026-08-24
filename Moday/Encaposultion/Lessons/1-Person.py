@@ -22,8 +22,4 @@ class Person:
       @name.setter
       def name(self, value: str):
             self.__name = value
-            
-if __name__ == "__main__":
-      object = Person()
-      object.__id = 1;
-      object.__name = "Hello"
+      
