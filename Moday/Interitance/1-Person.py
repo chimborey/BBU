@@ -5,14 +5,17 @@ class Person:
       def __init__(self, id, name, dob, gender):
             self.__id = id;
             self.__name = name;
-            self.__dob = dob;
             self.___gender = gender;
+            self.__dob = dob;
       
       # property
       @property
       def id(self): return self.__id;
+      @property
       def name(self): return self.__name;
+      @property
       def gender(self): return self.___gender;
+      @property
       def dob(self): return self.__dob;
       
       # setter
@@ -38,11 +41,17 @@ class Studen(Person):
             self.__network = network;
       @property
       def degree(self): return self.__degree;
+      @property
       def marjor(self): return self.__marjor;
+      @property
       def faculty(self): return self.__faculty;
+      @property
       def python(self): return self.__python;
+      @property
       def database(self): return self.__database;
+      @property
       def dsa(self): return self.__dsa;
+      @property
       def network(self): return self.__network;
       
       @degree.setter
@@ -61,6 +70,31 @@ class Studen(Person):
       @database.setter
       def database(self, value: float): self.__database = value;
       @dsa.setter
-      def dsa(self, value: float): self.__dsa = value;
+      def dsa(self, value: float):
+            if value > 0 and value < 100:
+                  raise ValueError("Invalid value.")
+            else:
+                  self.__dsa = value;
       @network.setter
       def network(self, value: str): self.__network = value;
+      # ------------- Show_Student ---------
+      def show_Student(self):
+            print(f"ID: {self.id}")
+            print(f"Name: {self.name}")
+            print(f"Gender: {self.gender}")
+            print(f"Dob: {self.dob}")
+            print(f"Degree: {self.degree}")
+            print(f"Marjor: {self.marjor}")
+            print(f"Faculty: {self.faculty}")
+            print(f"Python: {self.python}")
+            print(f"Database: {self.database}")
+            print(f"Dsa: {self.dsa}")
+            print(f"Network: {self.network}")
+      
+
+if __name__ == "__main__":
+      object = Studen(
+            1, "Nita", "Female", "01-01-2000", "Bachelor", "Leader", "", 90.0, 70.50, 50.50, 90
+      )
+      object.show_Student()
+            
