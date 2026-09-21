@@ -13,9 +13,9 @@ class Position:
       @property
       def name_en(self): return self.__name_en;
       @name_en.setter
-      def name_en(self, value: str): self.__name_en;
+      def name_en(self, value: str): self.__name_en = value;
       
       @property
       def name_kh(self): return self.__name_kh;
       @name_kh.setter
-      def name_kh(self, value: str): self.__name_kh;
+      def name_kh(self, value: str): self.__name_kh = value;
